@@ -77,7 +77,7 @@ var Factory = function (state, defaultArgs) {
     };
 
     $scope.$on('$destroy', function () {
-      eventHub.off('change', update);
+      eventHub.removeListener('change', update);
     });
 
     eventHub.on('change', update);
